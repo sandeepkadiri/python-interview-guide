@@ -37,3 +37,16 @@ skills = ["Python", "SQL", "Kubernetes", "AWS" ,"AI"]
 print(type(name))
 print(type(age))
 print(type(skills))
+
+##A beginner-friendly guide to Python Data Types, commonly used methods, and interview questions.
+=================================================================================================================================
+String     → upper, lower, replace, split, find, count
+List       → append, insert, extend, remove, pop, sort
+Tuple      → count, index
+Set        → add, remove, union, intersection, difference
+Dictionary → get, keys, values, items, update, pop
+
+String     = Text
+List       = Shopping Cart
+Tuple      = Locked
+========================================================================================
