@@ -1,0 +1,261 @@
+🐍 Python Data Types and Methods with Examples
+A beginner-friendly guide to Python Data Types, commonly used methods, and interview questions.
+=================================================================================================================================
+String     → upper, lower, replace, split, find, count
+List       → append, insert, extend, remove, pop, sort
+Tuple      → count, index
+Set        → add, remove, union, intersection, difference
+Dictionary → get, keys, values, items, update, pop
+
+String     = Text
+List       = Shopping Cart
+Tuple      = Locked
+========================================================================================
+1. String (str)
+Used to store text data.
+
+text = "python programming"
+
+print(text.upper())      # PYTHON PROGRAMMING
+print(text.lower())      # python programming
+print(text.replace("python", "Java"))
+print(text.split())      # ['python', 'programming']
+print(text.find("pro"))  # 7
+print(text.count("m"))   # 2
+Common Methods
+upper() → Converts to uppercase
+lower() → Converts to lowercase
+replace() → Replaces text
+split() → Splits string into list
+find() → Finds position
+count() → Counts occurrences
+✅ Memory Trick: ULRSFC
+
+2. List (list)
+Used to store multiple values.
+
+fruits = ["apple", "banana"]
+
+fruits.append("mango")
+print(fruits)
+
+fruits.insert(1, "orange")
+print(fruits)
+
+fruits.extend(["grapes", "kiwi"])
+print(fruits)
+
+fruits.remove("banana")
+print(fruits)
+
+fruits.pop()
+print(fruits)
+
+fruits.sort()
+print(fruits)
+Common Methods
+append()
+insert()
+extend()
+remove()
+pop()
+sort()
+✅ Memory Trick: AIERPS
+
+3. Tuple (tuple)
+Tuple is immutable (cannot be modified).
+
+numbers = (10, 20, 30, 20)
+
+print(numbers.count(20))  # 2
+print(numbers.index(30))  # 2
+Common Methods
+count()
+index()
+✅ Memory Trick: Tuple = Locked List
+
+4. Set (set)
+Stores unique values.
+
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+set1.add(6)
+
+print(set1)
+print(set1.union(set2))
+print(set1.intersection(set2))
+print(set1.difference(set2))
+Common Methods
+add()
+remove()
+union()
+intersection()
+difference()
+✅ Memory Trick: Set = Math Operations
+
+5. Dictionary (dict)
+Stores data as key-value pairs.
+
+employee = {
+    "name": "Sandeep",
+    "id": 101
+}
+
+print(employee.get("name"))
+print(employee.keys())
+print(employee.values())
+print(employee.items())
+
+employee.update({"city": "Hyderabad"})
+print(employee)
+
+employee.pop("id")
+print(employee)
+Common Methods
+get()
+keys()
+values()
+items()
+update()
+pop()
+✅ Memory Trick: Dictionary = Database Table
+
+6. Integer (int)
+num = 10
+
+print(num.bit_length())
+Output:
+
+4
+7. Float (float)
+num = 10.56
+
+print(round(num, 1))
+print(num.is_integer())
+Output:
+
+10.6
+False
+8. Boolean (bool)
+is_active = True
+
+print(type(is_active))
+Output:
+
+<class 'bool'>
+Mutable vs Immutable
+Mutable
+List
+Dictionary
+Set
+data = [1, 2, 3]
+data.append(4)
+
+print(data)
+Immutable
+String
+Tuple
+Integer
+Float
+Boolean
+name = "Python"
+
+# name[0] = "J" ❌ Error
+Difference Between append() and extend()
+numbers = [1, 2]
+
+numbers.append([3, 4])
+
+print(numbers)
+Output:
+
+[1, 2, [3, 4]]
+numbers = [1, 2]
+
+numbers.extend([3, 4])
+
+print(numbers)
+Output:
+
+[1, 2, 3, 4]
+✅ append() adds a single item.
+
+✅ extend() adds multiple items.
+
+Difference Between remove() and pop()
+nums = [10, 20, 30]
+
+nums.remove(20)
+print(nums)
+Output:
+
+[10, 30]
+nums = [10, 20, 30]
+
+nums.pop()
+print(nums)
+Output:
+
+[10, 20]
+✅ remove() removes by value.
+
+✅ pop() removes by index (default: last item).
+
+How to Check Data Type
+x = 100
+
+print(type(x))
+Output:
+
+<class 'int'>
+Quick Interview Revision
+String
+------
+upper()
+lower()
+replace()
+split()
+find()
+count()
+
+List
+----
+append()
+insert()
+extend()
+remove()
+pop()
+sort()
+
+Tuple
+-----
+count()
+index()
+
+Set
+---
+add()
+remove()
+union()
+intersection()
+difference()
+
+Dictionary
+----------
+get()
+keys()
+values()
+items()
+update()
+pop()
+One-Line Definitions
+String → Text Data
+List → Ordered Mutable Collection
+Tuple → Ordered Immutable Collection
+Set → Unique Values Collection
+Dictionary → Key-Value Collection
+Author
+Kadiri Sandeep Kumar
+Senior Application Specialist
+Python Learning & Interview Preparation Repository 🚀
