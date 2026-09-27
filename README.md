@@ -32,7 +32,7 @@ A comprehensive guide to Python Data Types with examples and interview questions
 ```python
 name = "Sandeep"
 age = 28
-skills = ["Python", "SQL", "Azure"]
+skills = ["Python", "SQL", "Kubernetes", "AWS" ,"AI"]
 
 print(type(name))
 print(type(age))
