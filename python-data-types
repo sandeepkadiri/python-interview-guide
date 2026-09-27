@@ -1,0 +1,317 @@
+python-data-types/
+│
+├── README.md
+├── examples/
+│   ├── numeric.py
+│   ├── string.py
+│   ├── list.py
+│   ├── tuple.py
+│   ├── set.py
+│   ├── dictionary.py
+│   └── boolean.py
+│
+├── interview_questions/
+│   └── data_types_qa.md
+│
+└── requirements.txt
+
+# Python Data Types
+
+A complete guide to Python Data Types with examples and interview questions.
+
+## What are Data Types?
+
+Data types specify what kind of value a variable can store in Python.
+
+---
+
+## 1. Numeric Types
+
+### Integer (int)
+
+```python
+age = 25
+print(type(age))
+```
+
+### Float (float)
+
+```python
+salary = 50000.50
+print(type(salary))
+```
+
+### Complex (complex)
+
+```python
+num = 3 + 4j
+print(type(num))
+```
+
+---
+
+## 2. String (str)
+
+```python
+name = "Sandeep"
+print(type(name))
+```
+
+### String Operations
+
+```python
+text = "Python"
+
+print(text[0])
+print(text[0:3])
+print(len(text))
+```
+
+---
+
+## 3. List (list)
+
+Lists are ordered, mutable, and allow duplicate values.
+
+```python
+fruits = ["Apple", "Banana", "Mango"]
+
+fruits.append("Orange")
+
+print(fruits)
+print(type(fruits))
+```
+
+---
+
+## 4. Tuple (tuple)
+
+Tuples are ordered and immutable.
+
+```python
+numbers = (1, 2, 3, 4)
+
+print(numbers)
+print(type(numbers))
+```
+
+---
+
+## 5. Set (set)
+
+Sets store unique values and do not allow duplicates.
+
+```python
+items = {"Apple", "Banana", "Apple"}
+
+print(items)
+print(type(items))
+```
+
+Output:
+
+```python
+{'Apple', 'Banana'}
+```
+
+---
+
+## 6. Dictionary (dict)
+
+Stores data in key-value pairs.
+
+```python
+employee = {
+    "name": "Sandeep",
+    "id": 101,
+    "designation": "Sr Application Specialist"
+}
+
+print(employee["name"])
+print(type(employee))
+```
+
+---
+
+## 7. Boolean (bool)
+
+```python
+is_active = True
+is_deleted = False
+
+print(type(is_active))
+```
+
+---
+
+## 8. Binary Types
+
+```python
+data1 = b"Python"
+data2 = bytearray(5)
+data3 = memoryview(bytes(5))
+```
+
+---
+
+# Mutable vs Immutable
+
+## Mutable Data Types
+
+- List
+- Dictionary
+- Set
+- Bytearray
+
+Example:
+
+```python
+numbers = [1, 2, 3]
+numbers.append(4)
+
+print(numbers)
+```
+
+## Immutable Data Types
+
+- String
+- Tuple
+- Integer
+- Float
+- Boolean
+
+Example:
+
+```python
+name = "Python"
+
+# name[0] = "J"  # Error
+```
+
+---
+
+# Check Data Type
+
+```python
+x = 10
+
+print(type(x))
+```
+
+Output:
+
+```python
+<class 'int'>
+```
+
+---
+
+# List vs Tuple
+
+| List | Tuple |
+|--------|---------|
+| Mutable | Immutable |
+| Uses [] | Uses () |
+| Slower | Faster |
+| More Memory | Less Memory |
+
+Example:
+
+```python
+my_list = [1, 2, 3]
+my_tuple = (1, 2, 3)
+```
+
+---
+
+# Set vs List
+
+| List | Set |
+|--------|--------|
+| Ordered | Unordered |
+| Duplicates Allowed | No Duplicates |
+| Mutable | Mutable |
+
+Example:
+
+```python
+lst = [1, 1, 2, 3]
+st = {1, 1, 2, 3}
+
+print(lst)
+print(st)
+```
+
+---
+
+# Difference Between == and is
+
+```python
+a = [1, 2, 3]
+b = [1, 2, 3]
+
+print(a == b)
+print(a is b)
+```
+
+Output:
+
+```python
+True
+False
+```
+
+- `==` compares values.
+- `is` compares memory locations.
+
+---
+
+# Interview Questions
+
+### What are Python Data Types?
+
+Python data types define the type of value stored in a variable.
+
+### What are the built-in data types in Python?
+
+- int
+- float
+- complex
+- str
+- list
+- tuple
+- set
+- dict
+- bool
+- bytes
+- bytearray
+- memoryview
+
+### Which data types are mutable?
+
+- List
+- Dictionary
+- Set
+- Bytearray
+
+### Which data types are immutable?
+
+- String
+- Tuple
+- Integer
+- Float
+- Boolean
+
+### Difference between List and Tuple?
+
+- List is mutable - Lists use `[]`.
+- Tuple is immutable- Tuples use `()`.
+
+
+
+---
+
+# Author
+**Kadiri Sandeep Kumar**
+
+
