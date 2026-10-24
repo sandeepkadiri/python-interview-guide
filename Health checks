@@ -1,0 +1,76 @@
+import requests
+import smtplib
+import time
+from email.mime.text import MIMEText
+
+# Hosts to monitor
+HOSTS = [
+    "https://dummyjson.com/products",
+    "https://dummyjson.com/users",
+    "https://dummyjson.com/posts"
+]
+
+# Email Configuration
+SENDER_EMAIL = "your-email@gmail.com"
+SENDER_PASSWORD = "your-app-password"
+RECEIVER_EMAIL = "team@example.com"
+
+
+def send_email(message):
+    msg = MIMEText(message)
+    msg["Subject"] = "Application Health Check Alert"
+    msg["From"] = SENDER_EMAIL
+    msg["To"] = RECEIVER_EMAIL
+
+    try:
+        with smtplib.SMTP("smtp.gmail.com", 587) as server:
+            server.starttls()
+            server.login(SENDER_EMAIL, SENDER_PASSWORD)
+            server.send_message(msg)
+
+        print("📧 Alert email sent successfully")
+
+    except Exception as e:
+        print(f"Email sending failed: {e}")
+
+
+def check_hosts():
+    unhealthy_hosts = []
+
+    for host in HOSTS:
+        try:
+            response = requests.get(host, timeout=10)
+
+            if response.status_code == 200:
+                print(f"✅ Healthy: {host}")
+            else:
+                print(
+                    f"❌ Unhealthy: {host} | Status Code: {response.status_code}"
+                )
+                unhealthy_hosts.append(
+                    f"{host} | Status Code: {response.status_code}"
+                )
+
+        except Exception as e:
+            print(f"❌ Error: {host} | {e}")
+            unhealthy_hosts.append(f"{host} | Error: {e}")
+
+    if unhealthy_hosts:
+        body = "The following hosts are unhealthy:\n\n"
+        body += "\n".join(unhealthy_hosts)
+        send_email(body)
+    else:
+        print("✅ All hosts are healthy")
+
+
+print("Starting Health Check Monitor...")
+
+while True:
+    print("\n==============================")
+    print("Running Health Check")
+    print("==============================")
+
+    check_hosts()
+
+    print("Next check in 30 minutes...")
+    time.sleep(1800)  # 30 minutes
