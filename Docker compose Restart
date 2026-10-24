@@ -1,0 +1,35 @@
+import subprocess
+
+class DockerCompose:
+
+    def __init__(self):
+        self.compose_file = "/opt/app/deploy/dockercompose.yaml"
+
+    def stop(self):
+        print("Stopping application...")
+        subprocess.run(
+            ["docker", "compose", "-f", self.compose_file, "down"],
+            check=True
+        )
+        print("Application stopped successfully.")
+
+    def start(self):
+        print("Starting application...")
+        subprocess.run(
+            ["docker", "compose", "-f", self.compose_file, "up", "-d"],
+            check=True
+        )
+        print("Application started successfully.")
+
+    def restart(self):
+        print("Restarting application...")
+        self.stop()
+        self.start()
+        print("Application restarted successfully.")
+
+
+# Create object
+app = DockerCompose()
+
+# Restart application
+app.restart()
